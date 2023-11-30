@@ -29,6 +29,7 @@ export default class App extends React.Component {
     this.setState((prevState) => ({
       contacts: [...prevState.contacts, contact],
     }));
+    return true;
   };
 
   handleDeleteContact = (id) => {
