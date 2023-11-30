@@ -16,6 +16,16 @@ export default class App extends React.Component {
   };
 
   addContact = (contact) => {
+
+    const { contacts } = this.state;
+
+  
+  const isNameAlreadyExists = contacts.some((existingContact) => existingContact.name === contact.name);
+
+  if (isNameAlreadyExists) {
+    alert('This name is already in the phonebook. Please choose a different name.');
+    return false;  
+  }
     this.setState((prevState) => ({
       contacts: [...prevState.contacts, contact],
     }));
